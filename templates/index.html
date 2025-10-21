@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Dashboard de Gestão de Projetos</h1>
+  <p>Bem-vindo à Smart Bakery 4.0! Aqui você acompanha o andamento do projeto da padaria inteligente — com metas, progresso e indicadores de desempenho.</p>
+
+  <!-- ===== KPI BOXES ===== -->
+  <div class="kpi-boxes">
+    <div class="kpi-box">
+      <div class="kpi-title">Progresso Geral</div>
+      <div class="kpi-value">75%</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-title">Tarefas Concluídas</div>
+      <div class="kpi-value">15 / 20</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-title">CPI (Índice de Custo)</div>
+      <div class="kpi-value">1.05</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-title">SPI (Índice de Prazo)</div>
+      <div class="kpi-value">0.97</div>
+    </div>
+  </div>
+
+  <!-- ===== BURNDOWN CHART ===== -->
+  <div class="card">
+    <h2>Gráfico Burndown</h2>
+    <canvas id="burndownChart" width="400" height="160"></canvas>
+  </div>
+
+  <!-- ===== BACKLOG TABLE ===== -->
+  <div class="card">
+    <h2>Product Backlog</h2>
+    <table class="backlog-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>User Story</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Como gerente, quero monitorar temperatura do forno em tempo real.</td><td>Concluído</td></tr>
+        <tr><td>2</td><td>Como padeiro, quero receber alertas de consumo de energia alto.</td><td>Em andamento</td></tr>
+        <tr><td>3</td><td>Como cliente, quero visualizar o cardápio digital da padaria.</td><td>Pendente</td></tr>
+        <tr><td>4</td><td>Como administrador, quero um relatório semanal automático.</td><td>Pendente</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== RISCOS ===== -->
+  <div class="card">
+    <h2>Riscos Identificados</h2>
+    <ul>
+      <li>📉 Atraso na entrega de sensores IoT.</li>
+      <li>⚙️ Falha na comunicação entre dispositivos e servidor.</li>
+      <li>💰 Aumento do custo de energia elétrica.</li>
+      <li>🥖 Falta de farinha importada para receitas premium.</li>
+    </ul>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

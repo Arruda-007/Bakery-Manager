@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Bakery 4.0</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Smart Bakery 4.0</h2>
+    <ul>
+      <li><a href="/">Gestão de Projetos</a></li>
+      <li><a href="/iot">Monitoramento IoT</a></li>
+      <li><a href="/insights">Análise e Insights</a></li>
+      <li><a href="/relatorios">Relatórios com IA</a></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>

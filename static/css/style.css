@@ -1,0 +1,238 @@
+/* ======== Smart Bakery 4.0 — Tema Oficial ======== */
+/* Paleta:
+   #2F2A28 (fundo principal - marrom quente)
+   #0A516D (sidebar - azul petróleo)
+   #018790 (destaques e links)
+   #7DAD93 (indicadores positivos)
+   #BACCA4 (fundos suaves / cards)
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+  background-color: #2f2a28;
+  color: #fff;
+  display: flex;
+}
+
+/* ======== SIDEBAR ======== */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background-color: #0a516d;
+  padding: 25px 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar h2 {
+  color: #bacca4;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.sidebar ul {
+  list-style: none;
+  width: 100%;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.sidebar ul li a:hover {
+  background-color: #018790;
+  color: #fff;
+  transform: translateX(4px);
+}
+
+/* ======== CONTEÚDO PRINCIPAL ======== */
+.main-content {
+  margin-left: 260px;
+  padding: 30px;
+  width: calc(100% - 260px);
+  background-color: #2f2a28;
+  min-height: 100vh;
+}
+
+h1 {
+  color: #bacca4;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #e0e0e0;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* ======== CARDS E CAIXAS ======== */
+.card {
+  background-color: #3a3432;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+/* ======== BOTÕES ======== */
+button,
+.btn {
+  background-color: #018790;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #0a516d;
+}
+
+/* ======== KPI BOX ======== */
+.kpi-box {
+  display: inline-block;
+  background-color: #3a3432;
+  color: #bacca4;
+  padding: 15px 25px;
+  border-radius: 10px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.kpi-title {
+  font-size: 14px;
+  color: #7dad93;
+}
+
+.kpi-value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* ======== LINKS ======== */
+a {
+  color: #7dad93;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #bacca4;
+}
+
+/* ======== SCROLLBAR ======== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2f2a28;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #018790;
+  border-radius: 5px;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* ======== MODULO 1 ======== */
+/* ======== TABELA BACKLOG ======== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #3a3432;
+}
+
+th {
+  background-color: #0a516d;
+  color: #bacca4;
+}
+
+tr:hover {
+  background-color: #3a3432;
+}
+
+/* ======== LISTA DE RISCOS ======== */
+.card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.card ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #3a3432;
+  font-size: 15px;
+}
+
+/* ======== MODULO 2======== */
+#tempValue, #energyValue, #occupValue {
+  font-size: 22px;
+  font-weight: bold;
+  color: #bacca4;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+@media (max-width: 900px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

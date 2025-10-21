@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Dashboard de Monitoramento IoT</h1>
+  <p>Monitoramento em tempo real dos sensores da Smart Bakery 4.0 — ambiente, segurança e produção.</p>
+
+  <!-- KPIs principais -->
+  <div class="kpi-boxes">
+    <div class="kpi-box">
+      <div class="kpi-title">Temperatura (°C)</div>
+      <div class="kpi-value" id="tempValue">-- °C</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-title">Consumo de Energia (kWh)</div>
+      <div class="kpi-value" id="energyValue">-- kWh</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-title">Ocupação (%)</div>
+      <div class="kpi-value" id="occupValue">--%</div>
+    </div>
+  </div>
+
+  <!-- Grade de gráficos -->
+  <div class="charts-grid">
+    <div class="card"><h2>Temperatura dos Fornos (°C)</h2><canvas id="tempChart"></canvas></div>
+    <div class="card"><h2>Consumo de Energia (kWh)</h2><canvas id="energyChart"></canvas></div>
+
+    <div class="card"><h2>Ocupação da Loja (%)</h2><canvas id="occupChart"></canvas></div>
+    <div class="card"><h2>Umidade do Ambiente (%)</h2><canvas id="humidityChart"></canvas></div>
+
+    <div class="card"><h2>Detecção de Vazamento de Gás (ppm)</h2><canvas id="gasChart"></canvas></div>
+    <div class="card"><h2>Detecção de Fumaça (ppm)</h2><canvas id="smokeChart"></canvas></div>
+
+    <div class="card"><h2>Luminosidade (lux)</h2><canvas id="lightChart"></canvas></div>
+    <div class="card"><h2>Fluxo de Água (L/min)</h2><canvas id="waterChart"></canvas></div>
+
+    <div class="card"><h2>Nível do Reservatório (%)</h2><canvas id="levelChart"></canvas></div>
+    <div class="card"><h2>Presença/Movimento (on/off)</h2><canvas id="motionChart"></canvas></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
