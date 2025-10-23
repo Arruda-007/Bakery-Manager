@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Histórico de Sensores — Smart Bakery 4.0</h1>
+  <p>Visualize aqui os dados reais gerados pelo script Python.</p>
+
+  <div class="charts-grid">
+    <div class="card"><h2>Temperatura (°C)</h2><canvas id="tempChart"></canvas></div>
+    <div class="card"><h2>Consumo de Energia (kWh)</h2><canvas id="energyChart"></canvas></div>
+    <div class="card"><h2>Ocupação da Loja (%)</h2><canvas id="occupancyChart"></canvas></div>
+    <div class="card"><h2>Umidade (%)</h2><canvas id="humidityChart"></canvas></div>
+    <div class="card"><h2>Vazamento de Gás (ppm)</h2><canvas id="gasChart"></canvas></div>
+    <div class="card"><h2>Fumaça (ppm)</h2><canvas id="smokeChart"></canvas></div>
+    <div class="card"><h2>Luminosidade (lux)</h2><canvas id="lightChart"></canvas></div>
+    <div class="card"><h2>Fluxo de Água (L/min)</h2><canvas id="waterChart"></canvas></div>
+    <div class="card"><h2>Nível do Reservatório (%)</h2><canvas id="levelChart"></canvas></div>
+    <div class="card"><h2>Presença / Movimento</h2><canvas id="motionChart"></canvas></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    async function carregarDados() {
+      const resposta = await fetch("/api/historico");
+      const dados = await resposta.json();
+      const labels = dados.map(d => d.timestamp);
+
+      // Função para criar gráfico
+      function criarGrafico(id, label, campo, cor) {
+        const ctx = document.getElementById(id);
+        new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: labels,
+            datasets: [{
+              label: label,
+              data: dados.map(d => d[campo]),
+              borderColor: cor,
+              borderWidth: 2,
+              fill: false,
+              tension: 0.3
+            }]
+          },
+          options: {
+            responsive: true,
+            scales: {
+              x: { ticks: { color: "#fff" }, grid: { color: "rgba(255,255,255,0.1)" } },
+              y: { ticks: { color: "#fff" }, grid: { color: "rgba(255,255,255,0.1)" } }
+            },
+            plugins: { legend: { labels: { color: "#fff" } } }
+          }
+        });
+      }
+
+      // === GRÁFICOS HISTÓRICOS ===
+      criarGrafico("tempChart", "Temperatura", "temperatura", "#7dad93");
+      criarGrafico("energyChart", "Energia", "energia", "#018790");
+      criarGrafico("humidityChart", "Umidade", "umidade", "#0a516d");
+      criarGrafico("occupancyChart", "Ocupação", "ocupacao", "#bacca4");
+      criarGrafico("gasChart", "Gás", "gas", "#f70a0aff");
+      criarGrafico("smokeChart", "Fumaça", "fumaca", "#f9844a");
+      criarGrafico("lightChart", "Luminosidade", "luminosidade", "#f9dc5c");
+      criarGrafico("waterChart", "Fluxo de Água", "agua", "#118ab2");
+      criarGrafico("levelChart", "Nível", "nivel", "#7dd87d");
+      criarGrafico("motionChart", "Movimento", "movimento", "#ef476f");
+    }
+
+    carregarDados();
+  </script>
+{% endblock %}
