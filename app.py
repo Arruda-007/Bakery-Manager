@@ -29,5 +29,10 @@ def api_historico():
     df = df.tail(100)  # Mostra só as 100 últimas linhas
     return df.to_json(orient='records')
 
+@app.route('/sprints')
+def sprints():
+    return render_template('sprints.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)

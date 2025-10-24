@@ -104,6 +104,122 @@ p {
   transform: scale(1.01);
 }
 
+
+
+/* ======== BURDOWN ======== */
+/* ===== BURNDOWN + SPRINTS (lado a lado) ===== */
+.burndown-sprints-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+/* Gráfico à esquerda */
+.card-burndown {
+  flex: 2;
+  max-width: 700px;
+}
+
+/* Sprints à direita */
+.sprints-container {
+  flex: 1;
+  margin-top: 0;
+  background-color: #3a3432;
+  padding: 1.2rem;
+  border-radius: 14px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.sprints-container h2 {
+  color: #bacca4;
+  margin-bottom: 1rem;
+}
+
+/* Cards de sprint ajustados */
+.sprint-card {
+  margin-bottom: 1rem;
+  background-color: #2b2726;
+  border-left: 6px solid #018790;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.sprint-card:hover {
+  transform: translateY(-4px);
+}
+
+.sprint-card h3 {
+  color: #bacca4;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Cores específicas de status */
+.sprint-card.concluida { border-left-color: #7dad93; }
+.sprint-card.andamento { border-left-color: #f9dc5c; }
+.sprint-card.futura { border-left-color: #ef476f; }
+
+/* Botão */
+.botao-ver-todas {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #018790;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.botao-ver-todas:hover {
+  background-color: #016e76;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .burndown-sprints-wrapper {
+    flex-direction: column;
+  }
+
+  .card-burndown,
+  .sprints-container {
+    width: 100%;
+  }
+}
+
+/* ======== TÍTULO + BOTÃO (lado a lado) ======== */
+.titulo-sprints {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.titulo-sprints .titulo {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #bacca4;
+}
+
+.titulo-sprints .botao-ver-todas {
+  background-color: #018790;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
+}
+
+.titulo-sprints .botao-ver-todas:hover {
+  background-color: #016e76;
+}
+
+
 /* ======== BOTÕES ======== */
 button,
 .btn {
@@ -234,5 +350,59 @@ tr:hover {
   .charts-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ======== SPRINTS ======== */
+.sprints-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.sprint-card {
+  background-color: #2b2726;
+  border-left: 6px solid #018790;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.sprint-card:hover {
+  transform: translateY(-4px);
+}
+
+.sprint-card h3 {
+  margin-bottom: 0.5rem;
+  color: #bacca4;
+}
+
+.sprint-card.concluida {
+  border-left-color: #7dad93;
+}
+
+.sprint-card.andamento {
+  border-left-color: #f9dc5c;
+}
+
+.sprint-card.futura {
+  border-left-color: #ef476f;
+}
+
+.botao-ver-todas {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #018790;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.botao-ver-todas:hover {
+  background-color: #016e76;
 }
 
