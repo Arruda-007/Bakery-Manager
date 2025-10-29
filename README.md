@@ -94,9 +94,33 @@ Monitoramento **em tempo real** dos sensores:
 1. **Clone o repositório:**
    ```bash
    git clone https://github.com/seuusuario/smart-bakery.git
-   
-2. Acesse a pasta:
-   cd smart-bakery
+Acesse a pasta:
+
+bash
+Copiar código
+cd smart-bakery
+Crie e ative o ambiente virtual (opcional):
+
+bash
+Copiar código
+python -m venv venv
+venv\Scripts\activate   # Windows
+source venv/bin/activate  # Linux/Mac
+Instale as dependências:
+
+bash
+Copiar código
+pip install -r requirements.txt
+Execute o projeto:
+
+bash
+Copiar código
+python app.py
+Acesse no navegador:
+
+cpp
+Copiar código
+http://127.0.0.1:5000/
 
 
 🔐 (Opcional) Integração com OpenAI
