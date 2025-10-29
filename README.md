@@ -6,28 +6,28 @@
 
 ## 📂 Estrutura do Projeto
 
-smart_bakery/
-│
-├── app.py # Aplicação principal Flask
-├── data/
-│ └── iot_data.csv # Dados gerados dos sensores IoT
-├── templates/
-│ ├── base.html # Layout base
-│ ├── index.html # Tela inicial
-│ ├── iot.html # Monitoramento em tempo real
-│ ├── historico.html # Visualização de dados históricos
-│ ├── insights.html # KPIs e gráficos comparativos
-│ ├── relatorios.html # Geração de relatórios técnicos
-│ └── sprints.html # Tela das sprints do projeto
-├── static/
-│ ├── css/
-│ │ └── style.css # Estilos visuais do sistema
-│ ├── js/
-│ │ ├── iot.js # Sensores e gráficos em tempo real
-│ │ ├── historico.js # Gráficos do histórico real
-│ │ └── insights.js # KPIs e comparativos dos sensores
-│ └── img/ # Imagens do sistema
-└── requirements.txt # Dependências do projeto
+smart_bakery/ <br>
+│ <br>
+├── app.py # Aplicação principal Flask <br>
+├── data/ <br>
+│ └── iot_data.csv # Dados gerados dos sensores Io T<br>
+├── templates/ <br>
+│ ├── base.html # Layout base <br>
+│ ├── index.html # Tela inicial <br>
+│ ├── iot.html # Monitoramento em tempo real <br>
+│ ├── historico.html # Visualização de dados históricos <br>
+│ ├── insights.html # KPIs e gráficos comparativos <br>
+│ ├── relatorios.html # Geração de relatórios técnicos <br>
+│ └── sprints.html # Tela das sprints do projeto <br>
+├── static/ <br>
+│ ├── css/ <br>
+│ │ └── style.css # Estilos visuais do sistema <br>
+│ ├── js/ <br>
+│ │ ├── iot.js # Sensores e gráficos em tempo real <br>
+│ │ ├── historico.js # Gráficos do histórico real <br>
+│ │ └── insights.js # KPIs e comparativos dos sensores <br>
+│ └── img/ # Imagens do sistema <br>
+└── requirements.txt # Dependências do projeto <br>
 
 ---
 
@@ -94,30 +94,26 @@ Monitoramento **em tempo real** dos sensores:
 1. **Clone o repositório:**
    ```bash
    git clone https://github.com/seuusuario/smart-bakery.git
+  ```
 
- ```
 2. Acesse a pasta:
-   cd smart-bakery
     ```
-3. Crie e ative o ambiente virtual (opcional):
+   cd smart-bakery
+  ```
+4. Crie e ative o ambiente virtual (opcional):
    python -m venv venv
    venv\Scripts\activate   # Windows
    source venv/bin/activate  # Linux/Mac
-    ```
-
-    ```
-4. Instale as dependências:
+ 
+5. Instale as dependências:
    pip install -r requirements.txt
-    ```
-
-    ```
-5. Execute o projeto:
+    
+6. Execute o projeto:
    python app.py
-  ```
-  ```
+
 6. Acesse no navegador:
    http://127.0.0.1:5000/
-   ```
+ 
 
 🔐 (Opcional) Integração com OpenAI
 Se quiser gerar relatórios com inteligência artificial:
@@ -139,7 +135,7 @@ OPENAI_API_KEY=coloque_sua_chave_aqui
 | 📅 Sprints | Organização e planejamento do projeto |
 
 
-✨ Autores
+✨ Autores <br>
 👨‍💻 Desenvolvido por Cauê Arruda e equipe Bakery Manager <br>
 📍 Projeto acadêmico — Análise e Desenvolvimento de Sistemas <br>
 📚 Rio de Janeiro — 2025
