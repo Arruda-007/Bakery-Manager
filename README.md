@@ -98,18 +98,23 @@ Monitoramento **em tempo real** dos sensores:
  ```
 2. Acesse a pasta:
    cd smart-bakery
-
+    ```
 3. Crie e ative o ambiente virtual (opcional):
    python -m venv venv
    venv\Scripts\activate   # Windows
    source venv/bin/activate  # Linux/Mac
+    ```
 
+    ```
 4. Instale as dependências:
    pip install -r requirements.txt
+    ```
 
+    ```
 5. Execute o projeto:
    python app.py
-
+  ```
+  ```
 6. Acesse no navegador:
    http://127.0.0.1:5000/
    ```
@@ -124,17 +129,19 @@ Copiar código
 OPENAI_API_KEY=coloque_sua_chave_aqui
 
 ## 📸 Principais Telas
-Tela	Descrição
-🏠 Início -	Apresentação do sistema Smart Bakery 4.0
-⚙️ Monitoramento IoT- Sensores em tempo real com gráficos dinâmicos
-📈 Histórico Real -	Análise de dados gravados no CSV
-📊 Insights -	KPIs e comparativos automáticos
-📝 Relatórios -	Geração de relatórios técnicos com IA
-📅 Sprints -	Organização e planejamento do projeto
+| Tela | Descrição |
+|------------|--------------|
+| 🏠 Início | Apresentação do sistema Bakery Manager 4.0 |
+| ⚙️ Monitoramento IoT | Sensores em tempo real com gráficos dinâmicos |
+| 📈 Histórico Real | Análise de dados gravados no CSV |
+| 📊 Insights | KPIs e comparativos automáticos |
+| 📝 Relatórios | Geração de relatórios técnicos com IA |
+| 📅 Sprints | Organização e planejamento do projeto |
+
 
 ✨ Autores
-👨‍💻 Desenvolvido por Cauê Arruda e equipe Bakery Manager 
-📍 Projeto acadêmico — Análise e Desenvolvimento de Sistemas
+👨‍💻 Desenvolvido por Cauê Arruda e equipe Bakery Manager <br>
+📍 Projeto acadêmico — Análise e Desenvolvimento de Sistemas <br>
 📚 Rio de Janeiro — 2025
 
 🧠 Licença
