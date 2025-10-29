@@ -1,5 +1,70 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Análise e Insights</h1>
-  <p>Acompanhe correlações e conclusões sobre o desempenho da padaria.</p>
+  <h1>📊 Insights — Smart Bakery 4.0</h1>
+  <p>Veja aqui as análises automáticas com base nos dados históricos da padaria.</p>
+
+  <!-- ==== KPI BOXES ==== -->
+  <div class="kpi-boxes">
+    <div class="kpi-box">
+      <div class="kpi-title">Temperatura média (°C)</div>
+      <div class="kpi-value">{{ medias.temperatura }}</div>
+    </div>
+
+    <div class="kpi-box">
+      <div class="kpi-title">Consumo médio (kWh)</div>
+      <div class="kpi-value">{{ medias.energia }}</div>
+    </div>
+
+    <div class="kpi-box">
+      <div class="kpi-title">Umidade média (%)</div>
+      <div class="kpi-value">{{ medias.umidade }}</div>
+    </div>
+
+    <div class="kpi-box">
+      <div class="kpi-title">Ocupação média (%)</div>
+      <div class="kpi-value">{{ medias.ocupacao }}</div>
+    </div>
+
+    <div class="kpi-box">
+      <div class="kpi-title">Média de Gás (ppm)</div>
+      <div class="kpi-value">{{ medias.gas }}</div>
+    </div>
+
+    <div class="kpi-box">
+      <div class="kpi-title">Média de Fumaça (ppm)</div>
+      <div class="kpi-value">{{ medias.fumaca }}</div>
+    </div>
+
+    <div class="kpi-box">
+      <div class="kpi-title">Luminosidade média (lux)</div>
+      <div class="kpi-value">{{ medias.luminosidade }}</div>
+    </div>
+
+    <div class="kpi-box">
+      <div class="kpi-title">Fluxo de Água médio (L/min)</div>
+      <div class="kpi-value">{{ medias.agua }}</div>
+    </div>
+
+    <div class="kpi-box">
+      <div class="kpi-title">Nível do Reservatório médio (%)</div>
+      <div class="kpi-value">{{ medias.nivel }}</div>
+    </div>
+
+    <div class="kpi-box">
+      <div class="kpi-title">Presença / Movimento (%)</div>
+      <div class="kpi-value">{{ medias.movimento }}</div>
+    </div>
+  </div>
+
+  <!-- ==== GRÁFICO COMPARATIVO ==== -->
+  <div class="charts-grid-insights">
+    <div class="card-insights">
+      <h2>Médias comparativas</h2>
+      <canvas id="comparativoChart"></canvas>
+    </div>
+  </div>
+
+  <!-- ==== SCRIPTS ==== -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="{{ url_for('static', filename='js/insights.js') }}"></script>
 {% endblock %}

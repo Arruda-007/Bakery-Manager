@@ -1,5 +1,95 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Relatórios com IA</h1>
-  <p>Gere relatórios automáticos e lições aprendidas sobre a Smart Bakery 4.0.</p>
+  <h1>📊 Relatório Inteligente — Smart Bakery 4.0</h1>
+  <p>Gere um relatório técnico automatizado com base nos dados IoT mais recentes da padaria.</p>
+
+  <button id="btnGerar" class="btn" style="
+    background-color:#018790; 
+    color:white; 
+    padding:10px 25px; 
+    border:none; 
+    border-radius:10px; 
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;">
+    🚀 Gerar Relatório
+  </button>
+
+  <!-- Área do relatório -->
+  <div id="resultado" style="margin-top:25px; background:#1e1e1e; color:#fff; padding:25px; border-radius:12px; display:none;">
+    <h2>🧠 Relatório Gerado</h2>
+    <pre id="textoRelatorio" style="white-space:pre-wrap; font-size:15px;"></pre>
+  </div>
+
+  <!-- Tela de carregamento -->
+  <div id="loadingScreen" style="
+    display:none;
+    position:fixed;
+    top:0; left:0; right:0; bottom:0;
+    background:rgba(0,0,0,0.85);
+    z-index:9999;
+    color:#fff;
+    text-align:center;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+  ">
+    <div class="loader"></div>
+    <h2 style="margin-top:15px;">Gerando Relatório Inteligente...</h2>
+    <p style="font-size:14px; color:#ccc;">Smart Bakery 4.0 🍞</p>
+  </div>
+
+  <style>
+    /* 🔄 Animação de carregamento */
+    .loader {
+      border: 6px solid #444;
+      border-top: 6px solid #00bfa6;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+      margin: auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Efeito hover do botão */
+    #btnGerar:hover {
+      background-color:#00bfa6;
+      transform: scale(1.05);
+    }
+  </style>
+
+  <script>
+    const btn = document.getElementById("btnGerar");
+    const resultado = document.getElementById("resultado");
+    const texto = document.getElementById("textoRelatorio");
+    const loading = document.getElementById("loadingScreen");
+
+    btn.addEventListener("click", async () => {
+      // Mostra o loading
+      loading.style.display = "flex";
+      resultado.style.display = "none";
+
+      try {
+        const resp = await fetch("/api/gerar_relatorio");
+        const data = await resp.json();
+
+        // Exibe o relatório
+        texto.textContent = data.relatorio;
+        resultado.style.display = "block";
+      } catch (err) {
+        texto.textContent = "❌ Erro ao gerar o relatório. Tente novamente.";
+        resultado.style.display = "block";
+      } finally {
+        // Oculta o loading
+        loading.style.display = "none";
+      }
+    });
+  </script>
 {% endblock %}
+
+
