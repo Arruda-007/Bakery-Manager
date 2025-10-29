@@ -6,7 +6,7 @@
 
 ## 📂 Estrutura do Projeto
 
-smart_bakery/ <br>
+Bakery-Managery/ <br>
 │ <br>
 ├── app.py # Aplicação principal Flask <br>
 ├── data/ <br>
@@ -93,12 +93,12 @@ Monitoramento **em tempo real** dos sensores:
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seuusuario/smart-bakery.git
+   git clone https://github.com/seuusuario/Bakery-Manager.git
 Acesse a pasta:
 
 bash
 Copiar código
-cd smart-bakery
+cd Bakery-Manager
 Crie e ative o ambiente virtual (opcional):
 
 bash
