@@ -1,6 +1,6 @@
-# 🧁 Smart Bakery 4.0 — Sistema de Monitoramento IoT  
+# 🧁 Bakery Manager 4.0 — Sistema de Monitoramento IoT  
 
-🚀 **Smart Bakery 4.0** é um sistema desenvolvido em **Flask (Python)** para monitorar, analisar e gerar relatórios sobre dados de uma padaria inteligente, integrando sensores IoT, gráficos interativos e análise de desempenho.  
+🚀 **Bakery Manager 4.0** é um sistema desenvolvido em **Flask (Python)** para monitorar, analisar e gerar relatórios sobre dados de uma padaria inteligente, integrando sensores IoT, gráficos interativos e análise de desempenho.  
 
 ---
 
