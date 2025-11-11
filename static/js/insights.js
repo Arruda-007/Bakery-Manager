@@ -44,3 +44,43 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// ======== GRÁFICO DE CORRELAÇÃO ========
+const ctxCorr = document.getElementById("correlationChart");
+
+const labelsCorr = ["Semana 1", "Semana 2", "Semana 3", "Semana 4"];
+const antesAutomacao = [120, 115, 130, 128];
+const depoisAutomacao = [100, 95, 98, 92];
+
+new Chart(ctxCorr, {
+  type: "bar",
+  data: {
+    labels: labelsCorr,
+    datasets: [
+      {
+        label: "Antes da Automação",
+        data: antesAutomacao,
+        backgroundColor: "#0a516d"
+      },
+      {
+        label: "Depois da Automação",
+        data: depoisAutomacao,
+        backgroundColor: "#7dad93"
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      y: { beginAtZero: true, title: { display: true, text: "Consumo (kWh)" } }
+    }
+  }
+});
+
+// ======== DATA STORYTELLING ========
+const reducao = ((antesAutomacao.reduce((a,b)=>a+b) - depoisAutomacao.reduce((a,b)=>a+b))
+                 / antesAutomacao.reduce((a,b)=>a+b) * 100).toFixed(1);
+
+document.getElementById("storyText").textContent =
+  `Após a automação dos fornos e instalação dos sensores, observou-se uma redução média de ${reducao}% no consumo de energia. ` +
+  `Isso indica maior eficiência térmica e menor desperdício de energia, especialmente nos períodos de menor ocupação.`;

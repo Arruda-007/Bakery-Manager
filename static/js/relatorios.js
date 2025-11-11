@@ -1,24 +1,24 @@
-const gas = parseInt(document.querySelectorAll(".kpi-value")[4].innerText);
-const fumaça = parseInt(document.querySelectorAll(".kpi-value")[5].innerText);
+document.addEventListener("DOMContentLoaded", () => {
+  const loading = document.getElementById("loading");
+  const resultado = document.getElementById("resultadoTexto");
 
-const ctx = document.getElementById("alertChart");
+  async function gerar(endpoint) {
+    loading.classList.remove("hidden");
+    resultado.innerHTML = "";
 
-new Chart(ctx, {
-  type: "pie",
-  data: {
-    labels: ["Vazamentos de Gás", "Casos de Fumaça"],
-    datasets: [{
-      data: [gas, fumaça],
-      backgroundColor: ["#ef476f", "#f1a208"],
-      borderColor: "#fff",
-      borderWidth: 2
-    }]
-  },
-  options: {
-    plugins: {
-      legend: {
-        labels: { color: "#fff" }
-      }
+    try {
+      const res = await fetch(`/api/${endpoint}`);
+      const data = await res.json();
+
+      // Converter o texto Markdown em HTML bonito
+      resultado.innerHTML = marked.parse(data.relatorio);
+    } catch (err) {
+      resultado.innerHTML = "<p style='color:red;'>❌ Erro ao gerar relatório.</p>";
+    } finally {
+      loading.classList.add("hidden");
     }
   }
+
+  document.getElementById("btnStatus").addEventListener("click", () => gerar("gerar_relatorio"));
+  document.getElementById("btnLessons").addEventListener("click", () => gerar("licoes_aprendidas"));
 });

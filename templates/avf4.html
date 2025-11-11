@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>📊 Relatório Final — Smart Office</h1>
+  <p>Este relatório apresenta uma visão geral do desenvolvimento e implementação do Projeto Smart Office, destacando os principais marcos, desafios enfrentados e resultados alcançados.</p>
+
+  <!-- ==== KPI PRINCIPAL ==== -->
+  <div class="kpi-boxes">
+    <div class="kpi-box">
+      <div class="kpi-title">Total de Horas Gastas</div>
+      <div class="kpi-value" id="totalHoras">-- h</div>
+    </div>
+  </div>
+
+  <!-- ==== GRÁFICOS ==== -->
+  <div class="charts-grid">
+    <div class="card">
+      <h2>Temperatura (°C)</h2>
+      <canvas id="tempChart"></canvas>
+    </div>
+
+    <div class="card">
+      <h2>Horas Planejadas x Reais (h)</h2>
+      <canvas id="horasChart"></canvas>
+    </div>
+  </div>
+
+  <!-- ==== SCRIPTS ==== -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="{{ url_for('static', filename='js/avf4.js') }}"></script>
+{% endblock %}

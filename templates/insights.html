@@ -64,6 +64,14 @@
     </div>
   </div>
 
+  <!-- ===== GRÁFICO DE CORRELAÇÃO ===== -->
+<div class="card">
+  <h2>Correlação: Consumo de Energia antes e depois da automação</h2>
+  <canvas id="correlationChart"></canvas>
+  <p id="storyText" class="insight-story"></p>
+</div>
+
+
   <!-- ==== SCRIPTS ==== -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="{{ url_for('static', filename='js/insights.js') }}"></script>
