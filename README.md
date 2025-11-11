@@ -43,7 +43,8 @@ Ele permite acompanhar, em tempo real, o funcionamento dos fornos, sensores ambi
 ---
 
 ## 🧱 Estrutura de Pastas
-akery-manager/
+```
+bakery-manager/
 │
 ├── config/
 │   ├── .gitignore
@@ -65,7 +66,7 @@ akery-manager/
     ├── relatorios.html         # Relatórios com IA
     ├── historico.html          # Dados históricos
     └── sprints.html            # Documentação de progresso
-
+```
 ---
 
 ### 🧩 Tecnologias Utilizadas
