@@ -43,24 +43,28 @@ Ele permite acompanhar, em tempo real, o funcionamento dos fornos, sensores ambi
 ---
 
 ## 🧱 Estrutura de Pastas
-bakery-manager/
+akery-manager/
 │
 ├── config/
-│ ├── .gitnore
-│ └── requirements.txt
-├── app.py # Aplicação Flask principal
+│   ├── .gitignore
+│   └── requirements.txt
+│
+├── app.py                      # Aplicação Flask principal
+│
 ├── data/
-│ └── iot_data.csv # Dados simulados dos sensores
+│   └── iot_data.csv            # Dados simulados dos sensores
+│
 ├── static/
-│ ├── css/ # Estilos e layout
-│ └── js/ # Scripts JS (gráficos, IA, histórico)
+│   ├── css/                    # Estilos e layout
+│   └── js/                     # Scripts JS (gráficos, IA, histórico)
+│
 └── templates/
-├── base.html # Layout principal
-├── iot.html # Monitoramento IoT
-├── insights.html # KPIs e análises
-├── relatorios.html # Relatórios com IA
-├── historico.html # Dados históricos
-└── sprints.html # Documentação de progresso
+    ├── base.html               # Layout principal
+    ├── iot.html                # Monitoramento IoT
+    ├── insights.html           # KPIs e análises
+    ├── relatorios.html         # Relatórios com IA
+    ├── historico.html          # Dados históricos
+    └── sprints.html            # Documentação de progresso
 
 ---
 
