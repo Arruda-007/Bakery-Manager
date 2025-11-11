@@ -1,8 +1,8 @@
-# 🍞 Bakery Manager 4.0 — Sistema IoT e Relatórios Inteligentes  
+# 🍞 Smart Bakery 4.0 — Sistema IoT e Relatórios Inteligentes  
 
 ### 📚 Gestão de Projetos — Análise e Desenvolvimento de Sistemas  
 
-O **Bakery Manager 4.0** é um sistema inteligente de monitoramento IoT e análise de dados voltado para padarias modernas.  
+O **Smart Bakery 4.0** é um sistema inteligente de monitoramento IoT e análise de dados voltado para padarias modernas.  
 Ele permite acompanhar, em tempo real, o funcionamento dos fornos, sensores ambientais e consumo energético, além de gerar relatórios automáticos com o apoio de **IA (Gemini)**.
 
 ---
@@ -44,7 +44,7 @@ Ele permite acompanhar, em tempo real, o funcionamento dos fornos, sensores ambi
 
 ## 🧱 Estrutura de Pastas
 ```
-bakery-manager/
+SMART_BAKERY/
 │
 ├── config/
 │   ├── .gitignore
@@ -93,7 +93,7 @@ bakery-manager/
    ```
 2. **Acesse a pasta do projeto**
    ```bash
-   cd Bakery-Manager
+   cd Smart_bakery
    ```
 3. **Crie e ative o ambiente virtual (opcional)**
    ```bash
