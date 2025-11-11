@@ -1,152 +1,120 @@
-# 🧁 Bakery Manager 4.0 — Sistema de Monitoramento IoT  
+# 🍞 Bakery Manager 4.0 — Sistema IoT e Relatórios Inteligentes  
 
-🚀 **Bakery Manager 4.0** é um sistema desenvolvido em **Flask (Python)** para monitorar, analisar e gerar relatórios sobre dados de uma padaria inteligente, integrando sensores IoT, gráficos interativos e análise de desempenho.  
+### 📚 Gestão de Projetos — Análise e Desenvolvimento de Sistemas  
 
----
-
-## 📂 Estrutura do Projeto
-
-Bakery-Managery/ <br>
-│ <br>
-├── app.py # Aplicação principal Flask <br>
-├── data/ <br>
-│ └── iot_data.csv # Dados gerados dos sensores Io T<br>
-├── templates/ <br>
-│ ├── base.html # Layout base <br>
-│ ├── index.html # Tela inicial <br>
-│ ├── iot.html # Monitoramento em tempo real <br>
-│ ├── historico.html # Visualização de dados históricos <br>
-│ ├── insights.html # KPIs e gráficos comparativos <br>
-│ ├── relatorios.html # Geração de relatórios técnicos <br>
-│ └── sprints.html # Tela das sprints do projeto <br>
-├── static/ <br>
-│ ├── css/ <br>
-│ │ └── style.css # Estilos visuais do sistema <br>
-│ ├── js/ <br>
-│ │ ├── iot.js # Sensores e gráficos em tempo real <br>
-│ │ ├── historico.js # Gráficos do histórico real <br>
-│ │ └── insights.js # KPIs e comparativos dos sensores <br>
-│ └── img/ # Imagens do sistema <br>
-└── requirements.txt # Dependências do projeto <br>
+O **Bakery Manager 4.0** é um sistema inteligente de monitoramento IoT e análise de dados voltado para padarias modernas.  
+Ele permite acompanhar, em tempo real, o funcionamento dos fornos, sensores ambientais e consumo energético, além de gerar relatórios automáticos com o apoio de **IA (Gemini)**.
 
 ---
 
-## ⚙️ Funcionalidades
+## 🚀 Funcionalidades Principais
 
-### 🧠 Módulo IoT
-Monitoramento **em tempo real** dos sensores:
-- Temperatura  
-- Consumo de Energia  
-- Umidade  
-- Ocupação da Loja  
-- Vazamento de Gás  
-- Fumaça  
-- Luminosidade  
-- Fluxo de Água  
-- Nível do Reservatório  
-- Presença / Movimento  
+### 🧩 Módulo 1 — Estrutura Base
+- Interface desenvolvida em **Flask (Python)** e **HTML/CSS/JavaScript**.
+- Sistema modular com páginas integradas (IoT, Insights, Relatórios, Histórico etc).
 
----
+### 🌡️ Módulo 2 — Monitoramento IoT
+- Simulação de sensores:
+  - Temperatura  
+  - Umidade  
+  - Consumo de energia  
+  - Ocupação da loja  
+  - Luminosidade  
+  - Fluxo de água  
+  - Nível do reservatório  
+  - Gás e fumaça  
+  - Presença e movimento  
+- Atualização dinâmica dos gráficos via **Chart.js**.
+- Visualização de dados históricos com base em `iot_data.csv`.
 
-### 📊 Módulo Insights
-- Exibição de **KPIs automáticos** (médias por sensor)  
-- Gráfico comparativo geral dos sensores  
-- Cores e layout personalizados conforme identidade da Smart Bakery  
+### 🧠 Módulo 3 — Análises e Insights
+- Geração automática de **KPIs** médias dos sensores.
+- Gráficos comparativos (ex.: energia antes e depois da automação).
+- Textos narrativos e conclusões sobre desempenho e eficiência energética.
 
----
-
-### 📈 Módulo Histórico Real
-- Visualização dos dados registrados em **CSV**  
-- Gráficos interativos de todas as variáveis  
-- Atualização dinâmica com dados reais  
-
----
-
-### 📝 Módulo Relatórios
-- Geração automática de relatórios técnicos com base nos dados históricos  
-- Pode usar:
-  - **OpenAI GPT-3.5** (caso a chave esteja configurada no `.env`), ou  
-  - **Relatório local automático** (sem necessidade de API)  
+### 🤖 Módulo 4 — Relatórios Inteligentes com IA
+- **Integração com Google Gemini** (API Generative AI).  
+- Botões para:
+  - **Gerar Relatório Técnico de Status**
+  - **Gerar Lições Aprendidas**
+- Textos formatados automaticamente em estilo profissional.
+- Opção para download dos dados em `.csv`.
 
 ---
 
-### 📥 Exportação
-- Download direto dos dados em formato `.csv`  
-- Pronto para integração com **Tableau**, **Power BI** ou outras ferramentas de BI  
+## 🧱 Estrutura de Pastas
+bakery-manager/
+│
+├── config/
+│ ├── .gitnore
+│ └── requirements.txt
+├── app.py # Aplicação Flask principal
+├── data/
+│ └── iot_data.csv # Dados simulados dos sensores
+├── static/
+│ ├── css/ # Estilos e layout
+│ └── js/ # Scripts JS (gráficos, IA, histórico)
+└── templates/
+├── base.html # Layout principal
+├── iot.html # Monitoramento IoT
+├── insights.html # KPIs e análises
+├── relatorios.html # Relatórios com IA
+├── historico.html # Dados históricos
+└── sprints.html # Documentação de progresso
 
 ---
 
-## 🧰 Tecnologias Utilizadas
-
-| Categoria | Tecnologias |
-|------------|--------------|
-| Backend | Python, Flask |
-| Frontend | HTML5, CSS3, JavaScript, Chart.js |
-| Banco de Dados | CSV (simulação de dados IoT) |
-| Análise | Pandas |
-| API | OpenAI GPT-3.5 |
-| Ferramentas | VS Code, GitHub |
+### 🧩 Tecnologias Utilizadas
+- Python 3.12+
+- Flask
+- Pandas
+- Chart.js
+- HTML5 / CSS3 / JavaScript
+- Google Gemini API
+- dotenv
 
 ---
+💡Exemplos de Insights Gerados
+- “Após a instalação dos sensores de presença, observou-se uma redução média de 15% no consumo de energia.”
 
-## 🖥️ Como Executar Localmente
+- “A temperatura média dos fornos se manteve estável em 195°C, indicando bom controle térmico e eficiência energética.”
+---
+ 
+## ⚙️ Como Executar Localmente
 
-1. **Clone o repositório:**
+1. **Clone o repositório**
    ```bash
-   git clone https://github.com/seuusuario/Bakery-Manager.git
-Acesse a pasta:
+   git clone https://github.com/Arruda-007/Bakery-Manager.git
+   ```
+2. **Acesse a pasta do projeto**
+   ```bash
+   cd Bakery-Manager
+   ```
+3. **Crie e ative o ambiente virtual (opcional)**
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate      # Windows
+   source venv/bin/activate   # Linux/Mac
+   ```
+4. **Instale as dependências**
+   ```bash
+   pip install -r requirements.txt
+   ```
+5. **Configure sua chave da API Gemini**
+   Crie um arquivo .env na raiz do projeto:
+   ```bash
+   GEMINI_API_KEY=AIzaSyDsHrSlZnEDw3qKfpvKmwVVhLth82MsYi8
+   ```   
+6. **Execute o servidor Flask**
+   ```bash
+   python app.py
+   ```
+7. **Acesse no navegador**
+   ```bash
+   http://127.0.0.1:5000/
+   ```
+---
 
-bash
-Copiar código
-cd Bakery-Manager
-Crie e ative o ambiente virtual (opcional):
-
-bash
-Copiar código
-python -m venv venv
-venv\Scripts\activate   # Windows
-source venv/bin/activate  # Linux/Mac
-Instale as dependências:
-
-bash
-Copiar código
-pip install -r requirements.txt
-Execute o projeto:
-
-bash
-Copiar código
-python app.py
-Acesse no navegador:
-
-cpp
-Copiar código
-http://127.0.0.1:5000/
-
-
-🔐 (Opcional) Integração com OpenAI
-Se quiser gerar relatórios com inteligência artificial:
-
-Crie um arquivo chamado .env na raiz do projeto.
-
-Adicione sua chave de API da OpenAI:
-Copiar código
-OPENAI_API_KEY=coloque_sua_chave_aqui
-
-## 📸 Principais Telas
-| Tela | Descrição |
-|------------|--------------|
-| 🏠 Início | Apresentação do sistema Bakery Manager 4.0 |
-| ⚙️ Monitoramento IoT | Sensores em tempo real com gráficos dinâmicos |
-| 📈 Histórico Real | Análise de dados gravados no CSV |
-| 📊 Insights | KPIs e comparativos automáticos |
-| 📝 Relatórios | Geração de relatórios técnicos com IA |
-| 📅 Sprints | Organização e planejamento do projeto |
-
-
-✨ Autores <br>
-👨‍💻 Desenvolvido por Cauê Arruda e equipe Bakery Manager <br>
-📍 Projeto acadêmico — Análise e Desenvolvimento de Sistemas <br>
-📚 Rio de Janeiro — 2025
-
-🧠 Licença
-Este projeto é de uso acadêmico e livre para estudo, modificação e aprimoramento.
+👨‍💻 Autor: Cauê Arruda
+📍 Rio de Janeiro, Brasil
+🎓 Desenvolvedor Back-end
